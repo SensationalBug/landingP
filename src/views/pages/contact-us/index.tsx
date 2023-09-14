@@ -6,7 +6,7 @@ import ContactCard from './ContactCard';
 import AppBar from '../../../ui-component/extended/Appbar';
 
 // assets
-import headerBackground from 'assets/images/landing/bg-header.jpg';
+import headerBackground from '../../../assets/images/landing/bg-header.jpg';
 
 const HeaderWrapper = styled('div')(({ theme }) => ({
     backgroundImage: `url(${headerBackground})`,
@@ -15,9 +15,10 @@ const HeaderWrapper = styled('div')(({ theme }) => ({
     backgroundRepeat: 'no-repeat',
     textAlign: 'center',
     paddingTop: 30,
+    height: '100vh',
     [theme.breakpoints.down('md')]: {
-        paddingTop: 0
-    }
+    paddingTop: 0
+}
 }));
 
 // ============================|| CONTACT US MAIN ||============================ //

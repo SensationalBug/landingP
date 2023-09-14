@@ -176,10 +176,7 @@ const FooterSection = () => {
                         spacing={{ xs: 1.5, sm: 1, md: 3 }}
                     >
                         <Typography color="text.secondary">
-                            © UltraWeb is managed by{' '}
-                            <Link href="#" underline="hover">
-                                CodedThemes
-                            </Link>
+                            © UltraWeb is managed by Pedro Luis De Leon Alejo
                         </Typography>
                         <Stack direction="row" alignItems="center" spacing={{ xs: 3, sm: 1.5, md: 2 }}>
                             <IconButton

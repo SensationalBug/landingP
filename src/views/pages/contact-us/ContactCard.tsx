@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // material-ui
@@ -17,12 +17,15 @@ import {
     Typography
 } from '@mui/material';
 
+// third-party
+import { PatternFormat } from 'react-number-format';
+
+// assests
+import mailImg from '../../../assets/images/landing/widget-mail.svg'
+
 // project imports
 import AnimateButton from '../../../ui-component/extended/AnimateButton';
 import { gridSpacing } from '../../../store/constant';
-
-// assets
-import mailImg from 'assets/images/landing/widget-mail.svg';
 
 // select options
 const currencies = [
@@ -60,12 +63,12 @@ const sizes = [
 const ContactCard = () => {
     const theme = useTheme();
 
-    const [budget, setBudget] = React.useState(1);
+    const [budget, setBudget] = useState(1);
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setBudget(Number(event.target?.value!));
     };
 
-    const [size, setSize] = React.useState(1);
+    const [size, setSize] = useState(1);
     const handleChange1 = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setSize(Number(event.target?.value!));
     };
@@ -118,8 +121,8 @@ const ContactCard = () => {
                         }}
                     />
                 </Grid>
-                <Grid item xs={10} sx={{ mb: -37.5 }}>
-                    <Card sx={{ mb: 6.25 }} elevation={4}>
+                <Grid item xs={10} sx={{ marginTop: '100px' }}>
+                    <Card sx={{ mb: 6.25 }} elevation={12}>
                         <CardContent sx={{ p: 4 }}>
                             <Grid container spacing={gridSpacing}>
                                 <Grid item xs={12} sm={6}>
@@ -141,7 +144,16 @@ const ContactCard = () => {
                                     </FormControl>
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
-                                    <div>phonenumber</div>
+                                    <FormControl fullWidth>
+                                        <PatternFormat
+                                            format="+1 (###) ###-####"
+                                            mask="_"
+                                            fullWidth
+                                            customInput={TextField}
+                                            label="Phone Number"
+                                            placeholder="Enter Your Contact Number"
+                                        />
+                                    </FormControl>
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <FormControl fullWidth sx={{ textAlign: 'left' }}>

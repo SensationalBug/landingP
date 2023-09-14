@@ -73,13 +73,13 @@ const AppBar = ({ ...others }) => {
                             <div>ULTRA WEB</div>
                         </Typography>
                         <Stack direction="row" sx={{ display: { xs: 'none', sm: 'block' } }} spacing={{ xs: 1.5, md: 2.5 }}>
-                            <Button color="inherit" component={Link} href="#">
+                            <Button color="inherit" component={Link} href="/">
                                 Home
                             </Button>
                             <Button color="inherit" component={RouterLink} to="#" >
                                 Dashboard
                             </Button>
-                            <Button color="inherit" component={RouterLink} to="#" >
+                            <Button color="inherit" component={RouterLink} to="/contact" >
                                 Contacto
                             </Button>
                             <Button color="inherit" component={Link} href="#" >
