@@ -1,156 +1,164 @@
 // material-ui
-import { useTheme } from '@mui/material/styles';
-import { Button, CardMedia, Container, Grid, Link, Stack, Typography } from '@mui/material';
+import { useTheme } from "@mui/material/styles";
+import { CardMedia, Container, Grid, Stack, Typography } from "@mui/material";
+import { useContext } from "react";
 
-// project import
-import AnimateButton from '../../../ui-component/extended/AnimateButton';
-
-// assets
-import LayersTwoToneIcon from '@mui/icons-material/LayersTwoTone';
-
-import LayerLeft from '../../../assets/images/landing/customization-left.png';
-import LayerRight from '../../../assets/images/landing/customization-right.png';
+import LayerLeft from "../../../assets/images/Solar.png";
+import LayerRight from "../../../assets/images/Wallet.png";
+import { ColorContext } from "../../../contexts/ColorContext";
 
 // ==============================|| LANDING - CUSTOMIZE ||============================== //
 
 const CustomizeSection = () => {
-    const theme = useTheme();
-    const listSX = {
-        display: 'flex',
-        alignItems: 'center',
-        gap: '0.7rem',
-        padding: '10px 0',
-        fontSize: '1rem',
-        color: theme.palette.grey[900],
-        svg: { color: theme.palette.secondary.main }
-    };
+  const theme = useTheme();
+  const { Colors }: any = useContext(ColorContext);
+  const listSX = {
+    display: "flex",
+    alignItems: "center",
+    gap: "0.7rem",
+    padding: "10px 0",
+    fontSize: "1rem",
+    color: Colors.textColorPrimary,
+    svg: { color: theme.palette.secondary.main },
+  };
 
-    return (
-        <Container
-            sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}
-        >
-            <Grid container justifyContent="space-between" alignItems="center" spacing={{ xs: 1.5, sm: 2.5, md: 3, lg: 5 }}>
-                <Grid item xs={12} md={6} sx={{ img: { width: '100%' } }}>
-                    <Stack sx={{ width: '75%', mb: 5, mx: 'auto' }}>
-                        <CardMedia component="img" image={LayerLeft} alt="Layer" />
-                    </Stack>
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <Grid container spacing={2.5}>
-                        <Grid item xs={12}>
-                            <Typography variant="h5" sx={{ fontSize: { xs: '1.5rem', sm: '2.125rem' }, mb: 2 }}>
-                                Easy Developer Experience
-                            </Typography>
-                            <Typography
-                                variant="subtitle2"
-                                color="text.primary"
-                                sx={{
-                                    fontSize: '1rem',
-                                    zIndex: '99',
-                                    width: { xs: '100%', sm: '100%', md: 'calc(100% - 20%)' }
-                                }}
-                            >
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quas non, sapiente ducimus obcaecati incidunt.
-                            </Typography>
-                        </Grid>
-                        <Grid item xs={12}>
-                            <Typography sx={listSX}>
-                                A straightforward and simple folder structure.
-                            </Typography>
-                            <Typography sx={listSX}>
-                                Code that is organized in a clear and logical manner.
-                            </Typography>
-                            <Typography sx={listSX}>
-                                Setting up Typography and Color schemes is easy and effortless.
-                            </Typography>
-                            <Typography sx={listSX}>
-                                Multiple layout options that can be easily adjusted.
-                            </Typography>
-                            <Typography sx={listSX}>
-                                A theme that can be easily configured on a single page.
-                            </Typography>
-                            {/* <Stack direction="row">
-                                <AnimateButton>
-                                    <Button
-                                        startIcon={<LayersTwoToneIcon />}
-                                        sx={{ boxShadow: 'none', my: 4 }}
-                                        variant="contained"
-                                        component={RouterLink}
-                                        to="/components/autocomplete"
-                                    >
-                                        View All Components
-                                    </Button>
-                                </AnimateButton>
-                            </Stack> */}
-                        </Grid>
-                    </Grid>
+  return (
+    <Container
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Grid
+        container
+        justifyContent="space-between"
+        alignItems="center"
+        spacing={{ xs: 1.5, sm: 2.5, md: 3, lg: 5 }}
+        sx={{
+          backgroundColor: Colors.backgroundColor,
+        }}
+      >
+        <Grid item xs={12} md={6} sx={{ img: { width: "100%" } }}>
+          <Stack sx={{ width: "75%", mb: 5, mx: "auto" }}>
+            <CardMedia component="img" image={LayerLeft} alt="Layer" />
+          </Stack>
+        </Grid>
+        <Grid xs={12} md={6}>
+          <Grid>
+            <Grid item xs={12}>
+              <a
+                target="_blank"
+                href="https://tech-2f51a.web.app/encuesta/3"
+                rel="noreferrer"
+              >
+                <Typography
+                  sx={{
+                    fontSize: { xs: "1.5rem", sm: "2.125rem" },
+                    mb: 2,
+                    color: Colors.textColorPrimary,
+                    transition: ".3s",
+                    "&:hover": {
+                      color: Colors.textColorSecondary,
+                    },
+                  }}
+                >
+                  Solar Poll - Encuestas
+                </Typography>
+              </a>
+              <Typography
+                variant="subtitle2"
+                color="text.primary"
+                sx={{
+                  fontSize: "1rem",
+                  zIndex: "99",
+                  width: { xs: "100%", sm: "100%", md: "calc(100% - 20%)" },
+                  color: Colors.textColorPrimary,
+                }}
+              >
+                Desarrollo personalizado para un cliente que necesitaba una
+                pagina para mandar encuestas a sus clientes, y necesitaba el
+                maximo nivel de personalización.
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography
+                sx={{
+                  fontSize: "1.5rem",
+                  color: Colors.textColorPrimary,
+                  marginTop: 2,
+                }}
+              >
+                Herramientas utilizadas.
+              </Typography>
+              <Typography sx={listSX}>React.</Typography>
+              <Typography sx={listSX}>Material UI.</Typography>
+              <Typography sx={listSX}>Firebase realtime database.</Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <Grid
+            container
+            spacing={2.5}
+            direction={{ xs: "column-reverse", md: "row" }}
+          >
+            <Grid item xs={12} md={6}>
+              <Grid container spacing={2.5}>
+                <Grid item xs={12}>
+                  <Typography
+                    variant="h2"
+                    sx={{
+                      mb: 2,
+                      color: Colors.textColorPrimary,
+                      fontSize: { xs: "1.5rem", sm: "2.125rem" },
+                    }}
+                  >
+                    Wallet ITopia
+                  </Typography>
+                  <Typography
+                    variant="subtitle2"
+                    color="text.primary"
+                    sx={{
+                      zIndex: "99",
+                      fontSize: "1rem",
+                      color: Colors.textColorPrimary,
+                      width: { xs: "100%", md: "calc(100% - 20%)" },
+                    }}
+                  >
+                    Aplicación de registro de gastos destinada a mantener un
+                    control de los gastos que se tienen.
+                  </Typography>
                 </Grid>
                 <Grid item xs={12}>
-                    <Grid container spacing={2.5} direction={{ xs: 'column-reverse', md: 'row' }}>
-                        <Grid item xs={12} md={6}>
-                            <Grid container spacing={2.5}>
-                                <Grid item xs={12}>
-                                    <Typography variant="h2" sx={{ fontSize: { xs: '1.5rem', sm: '2.125rem' }, mb: 2 }}>
-                                        Figma Design System
-                                    </Typography>
-                                    <Typography
-                                        variant="subtitle2"
-                                        color="text.primary"
-                                        sx={{
-                                            fontSize: '1rem',
-                                            zIndex: '99',
-                                            width: { xs: '100%', md: 'calc(100% - 20%)' }
-                                        }}
-                                    >
-                                        Streamlining the development process and saving you time and effort in the initial design phase.
-                                    </Typography>
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Typography sx={listSX}>
-                                        Professional Kit for Designer
-                                    </Typography>
-                                    <Typography sx={listSX}>
-                                        Properly Organised Pages
-                                    </Typography>
-                                    <Typography sx={listSX}>
-                                        Dark/Light Design
-                                    </Typography>
-                                    <Typography sx={listSX}>
-                                        *Figma file included only in Plus & Extended Licenses.
-                                    </Typography>
-                                    <Typography sx={listSX}>
-                                        A theme that can be easily configured on a single page.
-                                    </Typography>
-                                    <Stack direction="row">
-                                        <AnimateButton>
-                                            <Button
-                                                startIcon={<LayersTwoToneIcon />}
-                                                sx={{ boxShadow: 'none', my: 4 }}
-                                                variant="contained"
-                                                component={Link}
-                                                href="#"
-                                            >
-                                                Explore Figma
-                                            </Button>
-                                        </AnimateButton>
-                                    </Stack>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} md={6} sx={{ img: { width: '100%' } }}>
-                            <Stack sx={{ width: '70%', mx: 'auto' }}>
-                                <CardMedia component="img" image={LayerRight} alt="Layer" />
-                            </Stack>
-                        </Grid>
-                    </Grid>
+                  <Typography
+                    sx={{
+                      fontSize: "1.5rem",
+                      color: Colors.textColorPrimary,
+                      marginTop: 2,
+                    }}
+                  >
+                    Herramientas utilizadas.
+                  </Typography>
+                  <ul>
+                    <Typography sx={listSX}>React Native</Typography>
+                    <Typography sx={listSX}>Material UI</Typography>
+                    <Typography sx={listSX}>NestJS - Backend</Typography>
+                    <Typography sx={listSX}>RailWay - Hosting API</Typography>
+                  </ul>
                 </Grid>
+              </Grid>
             </Grid>
-        </Container>
-    );
+            <Grid item xs={12} md={6} sx={{ img: { width: "100%" } }}>
+              <Stack sx={{ width: "70%", mx: "auto" }}>
+                <CardMedia component="img" image={LayerRight} alt="Layer" />
+              </Stack>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Container>
+  );
 };
 
 export default CustomizeSection;

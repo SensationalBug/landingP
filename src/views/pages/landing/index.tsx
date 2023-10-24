@@ -9,7 +9,7 @@ import FeatureSection from "./FeatureSection";
 import FooterSection from "./FooterSection";
 import CustomizeSection from "./CustomizeSection";
 import IncludeSection from "./IncludeSection";
-import RtlInfoSection from "./RtlInfoSection";
+import ContactCard from "../contact-us/ContactCard";
 
 // custom stlye
 const HeaderWrapper = styled("div")(({ theme }) => ({
@@ -52,14 +52,9 @@ const Landing = () => {
         <FeatureSection />
       </SectionWrapper>
 
-      {/* 5. CARRUSEL */}
-      <SectionWrapper sx={{ bgcolor: theme }}>
-        <div>CARRUSEL CON LAS APPS QUE HEMOS DISENADO</div>
-      </SectionWrapper>
-
       {/* multi-language section */}
       <SectionWrapper sx={{ py: 0 }}>
-        <RtlInfoSection />
+        <ContactCard />
       </SectionWrapper>
 
       {/* 7. include section */}

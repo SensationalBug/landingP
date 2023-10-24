@@ -13,7 +13,7 @@ function ColorProvider({ children }: props) {
     backgroundColor: theme.palette.dark[800],
     textColorPrimary: (theme.palette.background.paper = "#fff"),
     textColorSecondary: (theme.palette.background.paper = "#1e89e5"),
-    textColorGray: (theme.palette.background.paper = "#A1A1A1"),
+    textColorGray: (theme.palette.background.paper = "#F0F0F0"),
   };
 
   return (
