@@ -9,7 +9,6 @@ import {
   CardMedia,
   Container,
   Grid,
-  Link,
   Stack,
   Typography,
 } from "@mui/material";
@@ -57,7 +56,7 @@ const HeaderSection = () => {
   const { Colors }: any = useContext(ColorContext);
 
   const headerSX = {
-    fontSize: { xs: "2rem", sm: "3rem", md: "3.5rem", lg: "3.5rem" },
+    fontSize: { xs: "2rem", xl: "3.5rem" },
     color: Colors.textColorPrimary,
   };
 
@@ -110,16 +109,17 @@ const HeaderSection = () => {
                     variant="h1"
                     sx={headerSX}
                   >
-                    Use UltraWeb to Power Your Next
+                    <strong style={{ color: Colors.textColorSecondary }}>
+                      ULTRAWEB
+                    </strong>
                   </Typography>
-
                   <Typography
                     textAlign={{ xs: "center", md: "left" }}
                     variant="h1"
                     color="primary"
-                    sx={[headerSX, { color: Colors.textColorSecondary }]}
+                    sx={[headerSX]}
                   >
-                    Web App
+                    ¡La solución que estabas buscando!
                   </Typography>
                 </Stack>
               </motion.div>
@@ -145,8 +145,8 @@ const HeaderSection = () => {
                   variant="body1"
                   sx={{ fontSize: { xs: "1rem", md: "1.125rem" } }}
                 >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
-                  praesentium assumenda tenetur voluptas odit voluptates.
+                  Desarrollo profesional de aplicaciones móviles y páginas web
+                  al alcance de todos.
                 </Typography>
               </motion.div>
             </Grid>
@@ -176,14 +176,9 @@ const HeaderSection = () => {
                         color="secondary"
                         startIcon={<PlayArrowIcon />}
                       >
-                        Live Preview
+                        Preview
                       </Button>
                     </AnimateButton>
-                  </Grid>
-                  <Grid item>
-                    <Button component={Link} href="#" size="large">
-                      Purchase Now
-                    </Button>
                   </Grid>
                 </Grid>
               </motion.div>

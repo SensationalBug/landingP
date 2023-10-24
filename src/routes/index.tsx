@@ -1,11 +1,9 @@
-import { lazy } from 'react';
-import { useRoutes } from 'react-router-dom';
-import Loadable from '../ui-component/Loadable';
-import ContactUsPage from '../views/pages/contact-us';
+import { lazy } from "react";
+import { useRoutes } from "react-router-dom";
+import Loadable from "../ui-component/Loadable";
 
-const PagesLanding = Loadable(lazy(() => import('../views/pages/landing')));
+const PagesLanding = Loadable(lazy(() => import("../views/pages/landing")));
 
 export default function ThemeRoutes() {
-    return useRoutes([{ path: '/', element: <PagesLanding /> }, { path: '/contact', element: <ContactUsPage />, }]);
+  return useRoutes([{ path: "/", element: <PagesLanding /> }]);
 }
-
