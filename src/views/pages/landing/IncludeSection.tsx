@@ -38,9 +38,9 @@ const IncludeSection = () => {
     "NEXT",
   ];
   const margueeSecond = [
-    "NEST",
+    "NestJs",
     "MongoDB",
-    "PostGre",
+    "PostGreSQL",
     "SQL Server",
     "Typeorm",
     "TypeScript Support",
@@ -58,6 +58,7 @@ const IncludeSection = () => {
             sx={{
               fontSize: { xs: "1.5rem", sm: "2.125rem" },
               color: Colors.textColorPrimary,
+              textTransform: "uppercase",
             }}
           >
             Tecnologias que manejamos
