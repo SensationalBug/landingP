@@ -81,6 +81,7 @@ const FeatureSection = () => {
                 sx={{
                   fontSize: { xs: "1.5rem", sm: "2.125rem" },
                   color: Colors.textColorPrimary,
+                  textTransform: "uppercase",
                 }}
               >
                 Que ofrece UltraWeb?

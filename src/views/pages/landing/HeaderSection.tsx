@@ -1,11 +1,9 @@
-import { Link as RouterLink } from "react-router-dom";
 import { useMemo, useContext } from "react";
 
 // material-ui
 import { useTheme, styled } from "@mui/material/styles";
 import {
   Box,
-  Button,
   CardMedia,
   Container,
   Grid,
@@ -17,11 +15,7 @@ import {
 import { motion } from "framer-motion";
 
 // project imports
-import AnimateButton from "../../../ui-component/extended/AnimateButton";
 import useConfig from "../../../hooks/useConfig";
-
-// assets
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 import TechLight from "../../../assets/images/landing/tech-light.svg";
 import TechDark from "../../../assets/images/landing/tech-dark.svg";
@@ -119,7 +113,7 @@ const HeaderSection = () => {
                     color="primary"
                     sx={[headerSX]}
                   >
-                    ¡La solución que estabas buscando!
+                    ¡La solución que estas buscando!
                   </Typography>
                 </Stack>
               </motion.div>
@@ -148,39 +142,6 @@ const HeaderSection = () => {
                   Desarrollo profesional de aplicaciones móviles y páginas web
                   al alcance de todos.
                 </Typography>
-              </motion.div>
-            </Grid>
-            <Grid item xs={12}>
-              <motion.div
-                initial={{ opacity: 0, translateY: 550 }}
-                animate={{ opacity: 1, translateY: 0 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 150,
-                  damping: 30,
-                  delay: 0.4,
-                }}
-              >
-                <Grid
-                  container
-                  spacing={2}
-                  sx={{ justifyContent: { xs: "center", md: "flex-start" } }}
-                >
-                  <Grid item>
-                    <AnimateButton>
-                      <Button
-                        component={RouterLink}
-                        to="/"
-                        size="large"
-                        variant="contained"
-                        color="secondary"
-                        startIcon={<PlayArrowIcon />}
-                      >
-                        Preview
-                      </Button>
-                    </AnimateButton>
-                  </Grid>
-                </Grid>
               </motion.div>
             </Grid>
             <Grid item xs={12}>

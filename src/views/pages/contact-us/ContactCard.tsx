@@ -56,12 +56,13 @@ const ContactCard = () => {
       sx={{ backgroundColor: Colors.backgroundColor }}
       spacing={gridSpacing}
     >
-      <Grid container sx={{ justifyContent: "center", marginTop: "30px" }}>
+      <Grid container sx={{ justifyContent: "center", margin: "40px 0" }}>
         <Typography
           variant="h2"
           sx={{
             fontSize: { xs: "1.5rem", sm: "2.125rem" },
             color: Colors.textColorPrimary,
+            textTransform: "uppercase",
           }}
         >
           Contáctanos

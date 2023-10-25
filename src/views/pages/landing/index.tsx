@@ -1,6 +1,6 @@
 // material-ui
 import { useTheme, styled } from "@mui/material/styles";
-
+import { useRef } from "react";
 // project imports
 import AppBar from "../../../ui-component/extended/Appbar";
 import HeaderSection from "./HeaderSection";
@@ -28,12 +28,27 @@ const SectionWrapper = styled("div")({
 
 const Landing = () => {
   const theme = useTheme().palette.dark.dark;
+  const main: any = useRef(null);
+  const projects: any = useRef(null);
+  const products: any = useRef(null);
+  const contact: any = useRef(null);
+
+  const scrollToProjects = (ref: any) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <>
       {/* 1. header and hero section */}
-      <HeaderWrapper id="home">
-        <AppBar />
+      <HeaderWrapper ref={main} id="home">
+        <AppBar
+          scrollToMain={() => scrollToProjects(main)}
+          scrollToProjects={() => scrollToProjects(projects)}
+          scrollToProducts={() => scrollToProjects(products)}
+          scrollToContact={() => scrollToProjects(contact)}
+        />
         <HeaderSection />
       </HeaderWrapper>
 
@@ -43,17 +58,17 @@ const Landing = () => {
       </SectionWrapper>
 
       {/* 3. Developer Experience section */}
-      <SectionWrapper sx={{ bgcolor: theme }}>
+      <SectionWrapper ref={projects} sx={{ bgcolor: theme }}>
         <CustomizeSection />
       </SectionWrapper>
 
       {/* 4. about section */}
-      <SectionWrapper sx={{ bgcolor: theme }}>
+      <SectionWrapper ref={products} sx={{ bgcolor: theme }}>
         <FeatureSection />
       </SectionWrapper>
 
       {/* multi-language section */}
-      <SectionWrapper sx={{ py: 0 }}>
+      <SectionWrapper ref={contact} sx={{ bgcolor: theme }}>
         <ContactCard />
       </SectionWrapper>
 

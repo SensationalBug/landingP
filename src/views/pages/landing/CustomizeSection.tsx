@@ -26,8 +26,8 @@ const CustomizeSection = () => {
     <Container
       sx={{
         display: "flex",
-        justifyContent: "center",
         alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <Grid
@@ -39,6 +39,18 @@ const CustomizeSection = () => {
           backgroundColor: Colors.backgroundColor,
         }}
       >
+        <Grid container sx={{ justifyContent: "center", margin: "40px 10px" }}>
+          <Typography
+            variant="h2"
+            sx={{
+              fontSize: { xs: "1.5rem", sm: "2.125rem" },
+              color: Colors.textColorPrimary,
+              textTransform: "uppercase",
+            }}
+          >
+            Proyectos
+          </Typography>
+        </Grid>
         <Grid item xs={12} md={6} sx={{ img: { width: "100%" } }}>
           <Stack sx={{ width: "75%", mb: 5, mx: "auto" }}>
             <CardMedia component="img" image={LayerLeft} alt="Layer" />
